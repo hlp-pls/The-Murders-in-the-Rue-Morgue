@@ -27,7 +27,7 @@ document.getElementById("originalText").addEventListener("click", function(){
 
 	count_footnote_num++;
 
-	addedText.html("<sup>"+count_footnote_num+"</sup>"+"<span style='border: 1px solid black;'>"+selection.toString()+"</span>",true);
+	addedText.html("<sup>"+count_footnote_num+" </sup>"+"<span style='border: 1px solid black;'>"+selection.toString()+"</span>",true);
 	
 
 	is_element_added = true;
