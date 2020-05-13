@@ -39,12 +39,18 @@ document.getElementById("originalText").addEventListener("click", function(){
         //console.log(start,end);
         //console.log(selection.baseNode.parentNode.indexOf(selection.baseNode));
         var selectionHTML;
-
+        var is_sup_included = false;
         //console.log(range.cloneContents());
         let div=document.createElement("div");
         div.appendChild(range.cloneContents());
         selectionHTML = div.innerHTML;
-        console.log(div.innerHTML);
+        //console.log(div.innerHTML);
+        //------> check if there is sup tag
+        //console.log(div.getElementsByTagName("SUP"));
+        if(div.getElementsByTagName("SUP").length>0){
+            is_sup_included = true;
+            alert("선택된 텍스트에 이미 각주가 포함되어 있습니다.");
+        }
         div.remove();
 
         var previousNode = range.endContainer.previousSibling;
@@ -137,7 +143,8 @@ document.getElementById("originalText").addEventListener("click", function(){
             selection.toString()!=" " &&
             selection.toString()!="\n" &&
             selection.focusNode.parentNode.tagName!="SUP" &&
-            check_nxt_tag != "SUP"
+            check_nxt_tag != "SUP" &&
+            is_sup_included == false
             ){
 
             count_footnote_num++;
@@ -150,7 +157,7 @@ document.getElementById("originalText").addEventListener("click", function(){
                 count_footnote_num +
                 " </sup>"+
                 "<span class='footnote'>"+
-                selectionHTML +
+                selection.toString() +
                 "</span>" + " " + conjunction_string[rnNum] + " "
                 ,true);
             

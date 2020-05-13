@@ -94,17 +94,10 @@ sup {
 	word-break: keep-all;
 }
 
+
 .ml-en, .ml-punct, .ml-num, .ml-parentheses {
 	font-family: 'EB Garamond', serif;
 	font-size: 15.5pt;
-	line-height: 1.6;
-	/*position: relative;
-	top: -2px;*/
-}
-
-#generatedText .ml-en, .ml-punct, .ml-num, .ml-parentheses {
-	font-family: 'EB Garamond', serif;
-	font-size: 11pt;
 	line-height: 1.6;
 	/*position: relative;
 	top: -2px;*/
