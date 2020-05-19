@@ -94,6 +94,14 @@ sup {
 	word-break: keep-all;
 }
 
+#canvasContainer{
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+}
 
 .ml-en, .ml-punct, .ml-num, .ml-parentheses {
 	font-family: 'EB Garamond', serif;
@@ -120,7 +128,7 @@ span.indent{
 }
 
 .footnote{
-	border: 1px solid black;
+	border: 1.5px solid black;
 	/*border-radius: 3px;*/
 	padding: 1px;
 }
@@ -132,18 +140,20 @@ span.indent{
 }
 
 #originalText sup:hover{
+	background-color: rgb(255,255,0);
 	cursor: pointer;
 	padding-bottom: 3px;
 	animation-name: updown;
-  	animation-duration: 1.5s;
+  	animation-duration: 0.8s;
   	animation-iteration-count: 2;
 }
 
 #generatedText > sup:hover{
+	background-color: rgb(255,255,0);
 	cursor: pointer;
 	padding-bottom: 3px;
 	animation-name: updown;
-  	animation-duration: 1.5s;
+  	animation-duration: 0.8s;
   	animation-iteration-count: 2;
 }
 
